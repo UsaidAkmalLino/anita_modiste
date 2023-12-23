@@ -1,0 +1,27 @@
+<!-- <div class="login-container">
+        <div class="login-info">
+            <h1>Anita Modiste</h1>
+            <p>Tailor</p>
+        </div>
+        <div class="login-form">
+            <form action="" method="post">
+
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="keep-logged-in">
+                    <label for="keep-logged-in">Keep me logged in</label>
+                </div>
+
+                <div class="forgot-password">
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div> -->
