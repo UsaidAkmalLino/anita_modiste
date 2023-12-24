@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Dashboard</title>
     <link rel="stylesheet" href="css/tambah-pesanan.css">
+    <link rel="stylesheet" href="css/data-pesanan.css">
 </head>
 
 <body>
@@ -36,62 +37,7 @@
                 <html>
 
                 <head>
-                    <style>
-                        /* CSS untuk tabel */
-                        table {
-                            width: 100%;
-                            border-collapse: collapse;
-                            margin-top: 20px;
-                        }
 
-                        table,
-                        th,
-                        td {
-                            border: 1px solid black;
-                        }
-
-                        th,
-                        td {
-                            padding: 8px;
-                            text-align: left;
-                        }
-
-                        th {
-                            background-color: #f2f2f2;
-                        }
-
-                        /* CSS untuk div container */
-                        .data-container {
-                            width: 80%;
-                            margin: 0 auto;
-                            margin-top: 20px;
-                            border: 1px solid #ccc;
-                            padding: 20px;
-                            border-radius: 5px;
-                            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-                        }
-
-                        .data-container h1 {
-                            font-size: 24px;
-                            margin-bottom: 10px;
-                        }
-
-                        /* CSS untuk baris data */
-                        .data-row {
-                            display: flex;
-                            justify-content: space-between;
-                            border-bottom: 1px solid #ccc;
-                            padding: 5px 0;
-                        }
-
-                        .data-row:last-child {
-                            border-bottom: none;
-                        }
-
-                        .data-row div {
-                            flex: 1;
-                        }
-                    </style>
                 </head>
 
                 <body>
@@ -102,6 +48,10 @@
                             <th>Nama Pelanggan</th>
                             <th>Alamat Pelanggan</th>
                             <th>Nomer Telepon</th>
+                            <th>Desain</th>
+                            <th>Bahan</th>
+                            <th>Ukuran</th>
+                            <th>Jumlah</th>
                         </tr>
                         <?php
                         while ($row = mysqli_fetch_assoc($result)) {
@@ -110,6 +60,10 @@
                             echo "<td>" . $row["customer_name"] . "</td>";
                             echo "<td>" . $row["customer_address"] . "</td>";
                             echo "<td>" . $row["nomer_telepon"] . "</td>";
+                            echo "<td>" . $row["desain"] . "</td>";
+                            echo "<td>" . $row["bahan"] . "</td>";
+                            echo "<td>" . $row["ukuran"] . "</td>";
+                            echo "<td>" . $row["jumlah"] . "</td>";
                             echo "</tr>";
                         }
                         ?>
