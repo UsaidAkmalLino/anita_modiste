@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Des 2023 pada 09.48
+-- Waktu pembuatan: 25 Des 2023 pada 05.59
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -35,17 +35,17 @@ CREATE TABLE `pesanan_jahitan` (
   `desain` varchar(2000) NOT NULL,
   `bahan` varchar(2000) NOT NULL,
   `ukuran` text NOT NULL,
-  `jumlah` varchar(100) NOT NULL
+  `jumlah` varchar(100) NOT NULL,
+  `status` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `pesanan_jahitan`
 --
 
-INSERT INTO `pesanan_jahitan` (`id_pesan`, `customer_name`, `customer_address`, `nomer_telepon`, `desain`, `bahan`, `ukuran`, `jumlah`) VALUES
-(1, 'anam', 'blitar', '098887', 'kain fanel', 'katun', 'grGherHeth', '2'),
-(2, 'anam', 'blitar', 'asdasass', 'kain fanel', 'katun', 'dcvsdvv', 'EE'),
-(3, 'anam', 'blitar', '098887', 'kain fanel', 'katun', 'gznzn', 'rtjnryjmry');
+INSERT INTO `pesanan_jahitan` (`id_pesan`, `customer_name`, `customer_address`, `nomer_telepon`, `desain`, `bahan`, `ukuran`, `jumlah`, `status`) VALUES
+(10, 'anam', 'blitar', 'asdasass', 'fafaf', 'katun', 'lingkar dada = 10 cm\r\nlingkar dada = 10 cm\r\nlingkar dada = 10 cm\r\nlingkar dada = 10 cm\r\nlingkar dada = 10 cm\r\nlingkar dada = 10 cm\r\n', '1', 'sudahdiambil'),
+(11, 'anam', 'blitar', '098887', 'kain fanel', 'katun', 'fwrwgvrv', '3', 'sudahdiambil');
 
 -- --------------------------------------------------------
 
@@ -92,7 +92,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `pesanan_jahitan`
 --
 ALTER TABLE `pesanan_jahitan`
-  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

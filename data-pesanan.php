@@ -33,13 +33,27 @@
                 $query = "SELECT * FROM pesanan_jahitan";
                 $result = mysqli_query($koneksi, $query);
                 ?>
-
                 <html>
 
                 <head>
+                    <script>
+                        function updateStatus(id_pesan) {
+                            var new_status = "Selesai"; // Ubah status sesuai kebutuhan
+
+                            var xhr = new XMLHttpRequest();
+                            xhr.open("POST", "updatestatus.php", true);
+                            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                            xhr.onreadystatechange = function () {
+                                if (xhr.readyState === 4 && xhr.status === 200) {
+                                    var response = xhr.responseText;
+                                    alert(response); // Tampilkan pesan sukses atau pesan kesalahan
+                                }
+                            };
+                            xhr.send("id_pesan=" + id_pesan + "&new_status=" + new_status);
+                        }
+                    </script>
 
                 </head>
-
 
                 <body>
                     <!-- Tambahkan struktur HTML Anda di sini -->
@@ -53,6 +67,8 @@
                             <th>Bahan</th>
                             <th>Ukuran</th>
                             <th>Jumlah</th>
+                            <th>Status</th>
+                            <th>Action</th> <!-- Add this column for the update button -->
                         </tr>
                         <?php
                         while ($row = mysqli_fetch_assoc($result)) {
@@ -65,6 +81,8 @@
                             echo "<td>" . $row["bahan"] . "</td>";
                             echo "<td>" . $row["ukuran"] . "</td>";
                             echo "<td>" . $row["jumlah"] . "</td>";
+                            echo "<td>" . $row["status"] . "</td>";
+                            echo "<td><a href='updatestatus.php?id=" . $row["id_pesan"] . "'>Selesai</a></td>"; // Add the update link
                             echo "</tr>";
                         }
                         ?>
@@ -72,17 +90,8 @@
                 </body>
 
                 </html>
-
-                <?php
-                mysqli_close($koneksi);
-                ?>
-
-
             </div>
-
-
         </div>
-
     </div>
 </body>
 
