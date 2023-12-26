@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Des 2023 pada 05.59
+-- Waktu pembuatan: 26 Des 2023 pada 02.43
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -57,16 +57,20 @@ CREATE TABLE `user` (
   `id_admin` int(11) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
-  `akses` text NOT NULL DEFAULT 'karyawan'
+  `akses` text NOT NULL DEFAULT 'karyawan',
+  `nama` varchar(100) NOT NULL,
+  `alamat` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id_admin`, `username`, `password`, `akses`) VALUES
-(1, 'anitamodiste', '12345678', 'admin'),
-(3, 'anam', '12345678', 'karyawan');
+INSERT INTO `user` (`id_admin`, `username`, `password`, `akses`, `nama`, `alamat`) VALUES
+(1, 'anitamodiste', '12345678', 'admin', 'Khoirul Anam', 'Ponggok Blitar'),
+(3, 'anam', '12345678', 'karyawan', '', ''),
+(6, 'admin', 'admin', 'admin', '', ''),
+(7, 'anam', 'anam', 'karyawan', '', '');
 
 --
 -- Indexes for dumped tables
@@ -98,7 +102,7 @@ ALTER TABLE `pesanan_jahitan`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
