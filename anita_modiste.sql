@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 26 Des 2023 pada 02.43
+-- Waktu pembuatan: 01 Jan 2024 pada 14.28
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -44,8 +44,9 @@ CREATE TABLE `pesanan_jahitan` (
 --
 
 INSERT INTO `pesanan_jahitan` (`id_pesan`, `customer_name`, `customer_address`, `nomer_telepon`, `desain`, `bahan`, `ukuran`, `jumlah`, `status`) VALUES
-(10, 'anam', 'blitar', 'asdasass', 'fafaf', 'katun', 'lingkar dada = 10 cm\r\nlingkar dada = 10 cm\r\nlingkar dada = 10 cm\r\nlingkar dada = 10 cm\r\nlingkar dada = 10 cm\r\nlingkar dada = 10 cm\r\n', '1', 'sudahdiambil'),
-(11, 'anam', 'blitar', '098887', 'kain fanel', 'katun', 'fwrwgvrv', '3', 'sudahdiambil');
+(10, 'fdtrhcjtc', 'gvjygcyjctyt', 'asdasass', 'fafaf', 'katun', 'lingkar dada = 10 cmlingkar dada = 10 cmlingkar dada = 10 cmlingkar dada = 10 cmlingkar dada = 10 cmlingkar dada = 10 cm', '9999', 'sudahdiambil'),
+(11, 'anam', 'blitar', '098887', 'kain fanel', 'katun', 'fwrwgvrv', '3', 'sudahdiambil'),
+(12, 'anam', 'blitar', '098887', 'kain fanel', 'katun', 'cthrdtydytdjtydf', '43', 'sudahdiambil');
 
 -- --------------------------------------------------------
 
@@ -70,7 +71,7 @@ INSERT INTO `user` (`id_admin`, `username`, `password`, `akses`, `nama`, `alamat
 (1, 'anitamodiste', '12345678', 'admin', 'Khoirul Anam', 'Ponggok Blitar'),
 (3, 'anam', '12345678', 'karyawan', '', ''),
 (6, 'admin', 'admin', 'admin', '', ''),
-(7, 'anam', 'anam', 'karyawan', '', '');
+(21, 'indah', 'admin', 'admin', '', '');
 
 --
 -- Indexes for dumped tables
@@ -96,13 +97,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `pesanan_jahitan`
 --
 ALTER TABLE `pesanan_jahitan`
-  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
