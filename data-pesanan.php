@@ -70,7 +70,10 @@
                             <th>Ukuran</th>
                             <th>Jumlah</th>
                             <th>Status</th>
-                            <th>Action</th> <!-- Add this column for the update button -->
+                            <th>Action</th>
+                            <th>Edit</th>
+
+                            <!-- Add this column for the update button -->
                         </tr>
                         <?php
                         while ($row = mysqli_fetch_assoc($result)) {
@@ -84,7 +87,8 @@
                             echo "<td>" . $row["ukuran"] . "</td>";
                             echo "<td>" . $row["jumlah"] . "</td>";
                             echo "<td>" . $row["status"] . "</td>";
-                            echo "<td><a href='updatestatus.php?id=" . $row["id_pesan"] . "'>Selesai</a></td>"; // Add the update link
+                            echo "<td><a href='updatestatus.php?id=" . $row["id_pesan"] . "'>Selesai</a></td>";
+                            echo "<td><a href='edit.php?id=" . $row["id_pesan"] . "'>Edit</a></td>";
                             echo "</tr>";
                         }
                         ?>
