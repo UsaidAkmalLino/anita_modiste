@@ -11,17 +11,23 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/admin.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <div>
-      <h1> Anita Modiste Tailor</h1>
-    </div>
+    <div class="logo">
+      <h1 class="judul1"> Anita</h1> <br> <h1 class="judul2">Modiste</h1>  <br> <h1 class="judul3">Tailor</h1>
+    </div> 
+    
+       <img class="gambar" src="img/dress.png" alt="">
+    
 
     <div class="login-form">
       <form action="proseslogin.php" method="post">
-        <div class="mb-3">
-          <label for="username" class="form-label">username</label>
+        <div class="username">
+          <label for="username" class="form-label" style="font-family: tahoma; ">username</label>
           <input
             type="text"
             class="form-control"
@@ -30,8 +36,8 @@
             required
           />
         </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
+        <div class="password">
+          <label for="password" class="form-label" style="font-family: tahoma;">Password</label>
           <input
             type="password"
             class="form-control"
@@ -41,7 +47,9 @@
           />
         </div>
 
+        <div class="login">
         <button type="submit" class="btn btn-primary">Login</button>
+      </div>
       </form>
     </div>
   </body>

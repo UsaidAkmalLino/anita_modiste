@@ -1,93 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/tambah-penjahit.css">
 
     <!--  -->
     <script>
-        document.addEventListener("DOMContentLoaded", function(){
+        document.addEventListener("DOMContentLoaded", function () {
             var form = document.querySelector("form");
-            form.addEventListener("submit", function(event){
+            form.addEventListener("submit", function (event) {
                 event.preventDefault(); // Menghentikan pengiriman form standar
-        
+
                 var formData = new FormData(form);
-        
+
                 // Kirim data menggunakan AJAX
                 fetch("tambah-penjahit.php", {
-                    method: "POST",
-                    body: formData
-                })
-                .then(response => response.text())
-                .then(data => {
-                    // Tangani respons disini, misalnya:
-                    console.log("Sukses: ", data);
-                    // Tampilkan pesan sukses atau update UI
-                    alert("Data berhasil ditambahkan!");
-                })
-                .catch(error => {
-                    console.error("Error: ", error);
-                });
+                        method: "POST",
+                        body: formData
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        // Tangani respons disini, misalnya:
+                        console.log("Sukses: ", data);
+                        // Tampilkan pesan sukses atau update UI
+                        alert("Data berhasil ditambahkan!");
+                    })
+                    .catch(error => {
+                        console.error("Error: ", error);
+                    });
             });
         });
-        </script>
-        
+    </script>
+
 
     <!--  -->
 </head>
+
 <body>
     <div class="dashboard">
         <div class="sidebar">
             <!-- Sidebar content -->
             <h2>ADMIN</h2>
-            <a href="tambah-pesanan.html" class="active">Pesanan Jahitan</a>
-            <a href="data-pesanan.php" class="active">Data Jahitan</a>
-            <a href="tambah-penjahit.html" class="active">Tambah Penjahit</a>
-            <a href="data-penjahit.php" class="active">Data Penjahit</a>
+            <hr width="200px" size="3px" color="white" align="center" >
+            <div class="menu">
+                <a href="tambah-pesanan.html" class="active">Pesanan Jahitan</a>
+                <a href="data-pesanan.php" class="active">Data Jahitan</a>
+                <a href="tambah-penjahit.html" class="active">Tambah Penjahit</a>
+                <a href="data-penjahit.php" class="active">Data Penjahit</a>
+                <a href="nota.html" class="active">Nota Pesanan</a>
+            </div>
             <!-- Other sidebar items -->
         </div>
-        <body> 
-            <div class="mb-3">
-                <h1>Tambah Akun Karyawan</h1>
-            <form action="tambah-penjahit.php" method="POST">
-                <label for="username" class="form-label">Usename</label>
-                <input type="text" class="form-control" name="username" required><br>
-        
-                <label for="password" class="form-label">Password</label>
-                <input type="text" class="form-control" name="password" required><br>
-        
-                <label for="akses" class="form-label">Akses</label>
-                <input type="text" class="form-control" name="akses" required><br>
-        
-                <input type="submit" value="Tambah">
-            </form>
+
+        <body>
+            <h1>Tambah Akun Karyawan</h1> <br>
+            <div class="form-container">
+                <form action="tambah-penjahit.php" method="POST">
+                    <label for="username" class="form-label">Usename</label>
+                    <input type="text" class="form-control" name="username" required><br>
+
+                    <label for="password" class="form-label">Password</label>
+                    <input type="text" class="form-control" name="password" required><br>
+
+                    <label for="akses" class="form-label">Akses</label>
+                    <input type="text" class="form-control" name="akses" required><br>
+
+                    <input type="submit" value="Tambah">
+                </form>
             </div>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                crossorigin="anonymous"></script>
         </body>
-        </div>
+    </div>
     </div>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

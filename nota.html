@@ -22,34 +22,30 @@
             <!-- Other sidebar items -->
         </div>
         <div class="main-content">
-            <h3>Pesanan Jahitan</h3>
+            <h3>Cetak Nota</h3>
             <div class="form-container">
                 <form action="tambah-pesanan.php" method="post">
                     <div class="form-section">
                         <label for="customer-name">Nama Customer</label>
                         <input type="text" id="customer-name" name="customer-name">
-                        <label for="customer-address">Alamat Customer</label>
+                        <label for="customer-address">Biaya Bahan desain</label>
                         <input type="text" id="customer-address" name="customer-address"></input>
-                        <label for="nomer-telepon">Nomer Telepon</label>
+                        <label for="nomer-telepon">Biaya Jasa</label>
                         <input type="text" id="nomer-telepon" name="nomer-telepon"></input>
 
                         <!-- Other customer details -->
                     </div>
                     <div class="form-section">
-                        <label for="desain">Desain</label>
-                        <input type="text" id="desain" name="desain">
-                        <label for="bahan">Bahan</label>
-                        <input type="text" id="bahan" name="bahan">
-                        <label for="ukuran">Ukuran:</label>
+                        <label for="ukuran">Total:</label>
                         <textarea  id="ukuran" name="ukuran" rows="4"></textarea>
-                        <label for="jumlah">Jumlah:</label>
+                        <label for="jumlah">Tanggal:</label>
                         <input type="text" id="jumlah" name="jumlah">
                         
 
                         <!-- Other order details -->
                     </div>
                     <div class="form-actions">
-                        <button type="submit">SAVE</button>
+                        <button type="submit">PRINT</button>
                     </div>
                 </form>
             </div>

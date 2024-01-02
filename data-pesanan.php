@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Dashboard</title>
-    <link rel="stylesheet" href="css/tambah-pesanan.css">
     <link rel="stylesheet" href="css/data-pesanan.css">
+    <link rel="stylesheet" href="css/tambah-pesanan.css">
 </head>
 
 <body>
@@ -14,10 +14,14 @@
         <div class="sidebar">
             <!-- Sidebar content -->
             <h2>ADMIN</h2>
+            <hr width="200px">
+            <div class="menu">
             <a href="tambah-pesanan.html" class="active">Pesanan Jahitan</a>
-            <a href="data-pesanan.php" class="active">Data Jahitan</a>
-            <a href="tambah-penjahit.html" class="active">Tambah Penjahit</a>
-            <a href="data-penjahit.php" class="active">Data Penjahit</a>
+                <a href="data-pesanan.php" class="active">Data Jahitan</a>
+                <a href="tambah-penjahit.html" class="active">Tambah Penjahit</a>
+                <a href="data-penjahit.php" class="active">Data Penjahit</a>
+                <a href="nota.html" class="active">Nota Pesanan</a>
+            </div>
             <!-- Other sidebar items -->
         </div>
         <div class="main-content">
