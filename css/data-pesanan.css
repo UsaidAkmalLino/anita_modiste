@@ -2,12 +2,14 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    
 }
 
 table,
 th,
 td {
-    border: 1px solid black;
+    border: 5px solid rgba(254, 178, 0, 0.5);
+    
 }
 
 th,
@@ -50,4 +52,17 @@ th {
 
 .data-row div {
     flex: 1;
+}
+
+h3 {
+    font-family: 'Lobster Two', sans-serif;
+}
+
+.main-content {
+    font-family:tahoma;
+    font-size: 13px;
+}
+
+.content{
+    font-family:tahoma;
 }

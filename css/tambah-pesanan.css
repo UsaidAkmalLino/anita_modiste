@@ -2,6 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Alkatra';
+    background-color: #f4f4f4;
 }
 
 .dashboard {
@@ -76,17 +77,24 @@ h2 {
     border-bottom: 2px solid #333;
     padding-bottom: 10px;
     margin-bottom: 20px;
+    font-family: 'Lobster Two', sans-serif;
 }
 
 .form-container {
+    height: 90%;
     background: #fff;
     padding: 20px;
     border-radius: 8px;
+    border: 1px solid rgba(29, 93, 155, 0.5);
+    /* position: absolute; */
 }
 
 .form-section {
     margin-bottom: 20px;
     width: 700px;
+    
+    font-family: tahoma;
+    font-weight: bolder;
 }
 
 label {
@@ -116,10 +124,30 @@ button {
     color: white;
     border-radius: 4px;
     cursor: pointer;
+    position: absolute;
+    margin-top: -1%;
+    margin-left: -50%;
+    height: 40px;
+    width: 100px;
+    transition: all .4s ease-in-out;
+    box-shadow: 0px 20px 13px -12px grey;
 }
 
 button:hover {
+    transform: scale(1.1);
+    padding: 10px 20px;
+    border: none;
     background-color: #4cae4c;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    margin-top: -1%;
+    margin-left: -50%;
+    height: 45px;
+    width: 105px;
+    box-shadow: 0px 25px 10px -12px hsla(0, 0%, 50%, .5);
+    
 }
 
 
