@@ -1,12 +1,13 @@
 <?php
 // Koneksi ke database
 require_once("koneksi.php");
+
 // Membuat koneksi
 $koneksi = mysqli_connect($host, $username, $password, $database);
 
 // Cek koneksi
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($koneksi->connect_error) {
+    die("Connection failed: " . $koneksi->connect_error);
 }
 
 // Menangani form ketika di-submit
@@ -15,15 +16,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nama_customer = $_POST['nama_customer'];
     $biaya_bahan = $_POST['biaya_bahan'];
     $biaya_jasa = $_POST['biaya_jasa'];
-    $total = $_POST['total'];
+    $total = $biaya_bahan + $biaya_jasa; // Menghitung total secara otomatis
     $tanggal = $_POST['tanggal'];
 
     // Mempersiapkan perintah SQL untuk memasukkan data
     $sql = "INSERT INTO tabel_nota (no_nota, nama_customer, biaya_bahan, biaya_jasa, total, tanggal) VALUES (?, ?, ?, ?, ?, ?)";
 
     // Mempersiapkan prepared statement
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssssss", $no_nota, $nama_customer, $biaya_bahan, $biaya_jasa, $total, $tanggal);
+    $stmt = $koneksi->prepare($sql);
+    $stmt->bind_param("ssiiis", $no_nota, $nama_customer, $biaya_bahan, $biaya_jasa, $total, $tanggal);
 
     // Menjalankan perintah SQL
     if ($stmt->execute()) {
@@ -37,8 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Menutup koneksi
-$conn->close();
+$koneksi->close();
 ?>
+
 
 <!-- Form HTML untuk input data nota -->
 <!DOCTYPE html>
@@ -46,6 +48,14 @@ $conn->close();
 
 <head>
     <title>Input Nota</title>
+    <script>
+        function calculateTotal() {
+            var biayaBahan = parseFloat(document.getElementById('biaya_bahan').value) || 0;
+            var biayaJasa = parseFloat(document.getElementById('biaya_jasa').value) || 0;
+            var total = biayaBahan + biayaJasa;
+            document.getElementById('total').value = total;
+        }
+    </script>
 </head>
 
 <body>
@@ -58,13 +68,13 @@ $conn->close();
         <input type="text" name="nama_customer" required><br>
 
         <label for="biaya_bahan">Biaya Bahan:</label>
-        <input type="number" name="biaya_bahan" required><br>
+        <input type="number" id="biaya_bahan" name="biaya_bahan" required oninput="calculateTotal()"><br>
 
         <label for="biaya_jasa">Biaya Jasa:</label>
-        <input type="number" name="biaya_jasa" required><br>
+        <input type="number" id="biaya_jasa" name="biaya_jasa" required oninput="calculateTotal()"><br>
 
         <label for="total">Total:</label>
-        <input type="number" name="total" required><br>
+        <input type="number" id="total" name="total" required readonly><br>
 
         <label for="tanggal">Tanggal:</label>
         <input type="date" name="tanggal" required><br>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Jan 2024 pada 14.28
+-- Waktu pembuatan: 06 Jan 2024 pada 10.46
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -44,9 +44,34 @@ CREATE TABLE `pesanan_jahitan` (
 --
 
 INSERT INTO `pesanan_jahitan` (`id_pesan`, `customer_name`, `customer_address`, `nomer_telepon`, `desain`, `bahan`, `ukuran`, `jumlah`, `status`) VALUES
-(10, 'fdtrhcjtc', 'gvjygcyjctyt', 'asdasass', 'fafaf', 'katun', 'lingkar dada = 10 cmlingkar dada = 10 cmlingkar dada = 10 cmlingkar dada = 10 cmlingkar dada = 10 cmlingkar dada = 10 cm', '9999', 'sudahdiambil'),
-(11, 'anam', 'blitar', '098887', 'kain fanel', 'katun', 'fwrwgvrv', '3', 'sudahdiambil'),
-(12, 'anam', 'blitar', '098887', 'kain fanel', 'katun', 'cthrdtydytdjtydf', '43', 'sudahdiambil');
+(10, 'fdtrhcjtc', 'gvjygcyjctyt', 'asdasass', 'fafaf', 'katun', 'lingkar dada = 10 cmlingkar dada = 10 cmlingkar dada = 10 cmlingkar dada = 10 cmlingkar dada = 10 cmlingkar dada = 10 cm', '9', 'Pesanan Sudah Diambil'),
+(11, 'anam', 'blitar', '098887', 'kain fanel', 'katun', 'fwrwgvrv', '3', 'Pesanan Sudah Diambil'),
+(12, 'anam', 'blitar', '098887', 'kain fanel', 'katun', 'cthrdtydytdjtydf', '43', 'Pesanan Sudah Diambil'),
+(13, 'anam', 'blitar', '098887', 'kain fanel', 'katun', 'agsHHHJrtj', '3', 'Pesanan Sudah Diambil');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tabel_nota`
+--
+
+CREATE TABLE `tabel_nota` (
+  `id_nota` int(11) NOT NULL,
+  `no_nota` varchar(1000) NOT NULL,
+  `nama_customer` varchar(1000) NOT NULL,
+  `biaya_bahan` varchar(2000) NOT NULL,
+  `biaya_jasa` varchar(2000) NOT NULL,
+  `total` varchar(2000) NOT NULL,
+  `tanggal` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `tabel_nota`
+--
+
+INSERT INTO `tabel_nota` (`id_nota`, `no_nota`, `nama_customer`, `biaya_bahan`, `biaya_jasa`, `total`, `tanggal`) VALUES
+(1, '12', 'anam', '21412414', '3241413', '141441', '2024-01-11'),
+(2, '12', 'anam', '21412414', '3241413', '141441', '2024-01-11');
 
 -- --------------------------------------------------------
 
@@ -60,18 +85,17 @@ CREATE TABLE `user` (
   `password` varchar(30) NOT NULL,
   `akses` text NOT NULL DEFAULT 'karyawan',
   `nama` varchar(100) NOT NULL,
-  `alamat` varchar(100) NOT NULL
+  `alamat` varchar(100) NOT NULL,
+  `no_telepon` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id_admin`, `username`, `password`, `akses`, `nama`, `alamat`) VALUES
-(1, 'anitamodiste', '12345678', 'admin', 'Khoirul Anam', 'Ponggok Blitar'),
-(3, 'anam', '12345678', 'karyawan', '', ''),
-(6, 'admin', 'admin', 'admin', '', ''),
-(21, 'indah', 'admin', 'admin', '', '');
+INSERT INTO `user` (`id_admin`, `username`, `password`, `akses`, `nama`, `alamat`, `no_telepon`) VALUES
+(6, 'admin', 'admin', 'admin', 'anam', 'ponggok', '082132527801'),
+(25, 'karyawan', 'karyawan', 'karyawan', 'anam', 'ponggok', '082132527801');
 
 --
 -- Indexes for dumped tables
@@ -82,6 +106,12 @@ INSERT INTO `user` (`id_admin`, `username`, `password`, `akses`, `nama`, `alamat
 --
 ALTER TABLE `pesanan_jahitan`
   ADD PRIMARY KEY (`id_pesan`);
+
+--
+-- Indeks untuk tabel `tabel_nota`
+--
+ALTER TABLE `tabel_nota`
+  ADD PRIMARY KEY (`id_nota`);
 
 --
 -- Indeks untuk tabel `user`
@@ -97,13 +127,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `pesanan_jahitan`
 --
 ALTER TABLE `pesanan_jahitan`
-  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT untuk tabel `tabel_nota`
+--
+ALTER TABLE `tabel_nota`
+  MODIFY `id_nota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
