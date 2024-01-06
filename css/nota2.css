@@ -1,0 +1,41 @@
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+h2 {
+  color: #333;
+  text-align: center;
+}
+  .nota {
+    background-color: lightblue;
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+  }
+
+  .nota h3 {
+    margin-top: 0;
+    color: darkblue;
+  }
+  
+  .nota p {
+    margin: 5px 0;
+    color: black;
+  }
+  
+  .nota span.label {
+    font-weight: bold;
+  }
+  
+  .nota span.value {
+    margin-left: 5px;
+  }
+
+  .error {
+    color: red;
+    font-weight: bold;
+  }

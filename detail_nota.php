@@ -27,6 +27,7 @@ if (isset($_GET['id_nota'])) {
 
     <head>
         <title>Detail Nota</title>
+		<link rel="stylesheet" href="css/nota2.css">
         <script>
             function cetakNota() {
                 window.print();
@@ -35,6 +36,7 @@ if (isset($_GET['id_nota'])) {
     </head>
 
     <body>
+	<div class="container">
         <h2>Detail Nota</h2>
         <?php
         if ($nota) {
@@ -45,6 +47,7 @@ if (isset($_GET['id_nota'])) {
         }
         ?>
         <button onclick="cetakNota()">Cetak Nota</button>
+	
     </body>
 
     </html>

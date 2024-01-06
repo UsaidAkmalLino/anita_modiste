@@ -20,29 +20,52 @@ $conn->close();
 
 <head>
     <title>Daftar Nota</title>
+    <link rel="stylesheet" href="css/nota3.css">
+    <link rel="stylesheet" href="css/tambah-pesanan.css">
 </head>
 
 <body>
-    <h2>Daftar Nota</h2>
-
-    <?php
-    if ($result->num_rows > 0) {
-        // output data dari setiap baris
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>" . $row["no_nota"] . "</td>";
-            echo "<td>" . $row["nama_customer"] . "</td>";
-            echo "<td>" . $row["biaya_bahan"] . "</td>";
-            echo "<td>" . $row["biaya_jasa"] . "</td>";
-            echo "<td>" . $row["total"] . "</td>";
-            echo "<td>" . $row["tanggal"] . "</td>";
-            echo " <a href='detail_nota.php?id_nota=" . $row["id_nota"] . "'>Cetak Nota</a><br>";
-            echo "</tr>";
-        }
-    } else {
-        echo "0 results";
-    }
-    ?>
+    <div class="dashboard">
+        <div class="sidebar">
+            <!-- Sidebar content -->
+            <h2>ADMIN</h2>
+            <hr width="200px">
+            <div class="menu">
+                <a href="tambah-pesanan.html" class="active">Pesanan Jahitan</a>
+                <a href="data-pesanan.php" class="active">Data Jahitan</a>
+                <a href="tambah-penjahit.html" class="active">Tambah Penjahit</a>
+                <a href="data-penjahit.php" class="active">Data Penjahit</a>
+                <a href="nota.php" class="active">Nota Pesanan</a>
+                <a href="tampilnota.php" class="active">Daftar Nota</a>
+            </div>
+            <!-- Other sidebar items -->
+        </div>
+        <div class="main-content">
+		<h2>Daftar Nota</h2>
+		<div class="container">
+            <table>
+				<?php
+				if ($result->num_rows > 0) {
+					// output data dari setiap baris
+					while ($row = $result->fetch_assoc()) {
+						echo "<tr>";
+						echo "<td>" . $row["no_nota"] . "</td>";
+						echo "<td>" . $row["nama_customer"] . "</td>";
+						echo "<td>" . $row["biaya_bahan"] . "</td>";
+						echo "<td>" . $row["biaya_jasa"] . "</td>";
+						echo "<td>" . $row["total"] . "</td>";
+						echo "<td>" . $row["tanggal"] . "</td>";
+						echo "<td><a class='tombol' href='detail_nota.php?id_nota=" . $row["id_nota"] . "'>Cetak Nota</a></td>";
+						echo "</tr>";
+					}
+				} else {
+					echo "0 results";
+				}
+				?>
+			</table>
+		</div>
+	</div>
+</div>
 </body>
 
 </html>
