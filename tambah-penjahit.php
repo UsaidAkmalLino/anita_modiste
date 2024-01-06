@@ -12,10 +12,13 @@ if (!$koneksi) {
 $username = $_POST['username'];
 $password = $_POST['password'];
 $akses = $_POST['akses'];
+$nama = $_POST['nama'];
+$alamat = $_POST['alamat'];
+$no_telepon = $_POST['no_telepon'];
 
 
 // Buat query SQL untuk menambahkan akun karyawan
-$query = "INSERT INTO user (username, password, akses) VALUES ('$username', '$password', '$akses')";
+$query = "INSERT INTO user (username, password, akses, nama, alamat, no_telepon) VALUES ('$username', '$password', '$akses', '$nama', '$alamat', '$no_telepon')";
 
 // Eksekusi query
 if (mysqli_query($koneksi, $query)) {

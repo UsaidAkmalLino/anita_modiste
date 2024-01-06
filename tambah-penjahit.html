@@ -54,26 +54,36 @@
                 <a href="data-pesanan.php" class="active">Data Jahitan</a>
                 <a href="tambah-penjahit.html" class="active">Tambah Penjahit</a>
                 <a href="data-penjahit.php" class="active">Data Penjahit</a>
-                <a href="nota.html" class="active">Nota Pesanan</a>
+                <a href="nota.php" class="active">Nota Pesanan</a>
+                <a href="tampilnota.php" class="active">Daftar Nota</a>
             </div>
             <!-- Other sidebar items -->
         </div>
 
         <body>
             <h1>Tambah Akun Karyawan</h1> 
-            <hr class="garis2" size="4px">
+            <hr class="garis2" size="7px">
             <br>
             <div class="form-container">
                 <form action="tambah-penjahit.php" method="POST">
-                    <label for="username" class="form-label">Nama Penjahit</label>
+                    <label for="username" class="form-label">Username</label>
                     <input type="text" class="form-control" name="username" required><br>
 
-                    <label for="password" class="form-label">Alamat</label>
+                    <label for="password" class="form-label">Password</label>
                     <input type="text" class="form-control" name="password" required><br>
 
-                    <label for="akses" class="form-label">Nomer Telpon</label>
+                    <label for="akses" class="form-label">Akses</label>
                     <input type="text" class="form-control" name="akses" required><br>
 
+                    <label for="nama" class="form-label">Nama Penjahit</label>
+                    <input type="text" class="form-control" name="nama" required><br>
+
+                    <label for="alamat" class="form-label">Alamat</label>
+                    <input type="text" class="form-control" name="alamat" required><br>
+                    
+                    <label for="no_telepon" class="form-label">Nomer Telepon</label>
+                    <input type="text" class="form-control" name="no_telepon" required><br>
+                    
                     <input type="submit" value="Tambah">
                 </form>
             </div>

@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="css/data-pesanan.css">
     <link rel="stylesheet" href="css/tambah-pesanan.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster+Two&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster+Two&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -19,11 +20,12 @@
             <h2>ADMIN</h2>
             <hr width="200px">
             <div class="menu">
-            <a href="tambah-pesanan.html" class="active">Pesanan Jahitan</a>
+                <a href="tambah-pesanan.html" class="active">Pesanan Jahitan</a>
                 <a href="data-pesanan.php" class="active">Data Jahitan</a>
                 <a href="tambah-penjahit.html" class="active">Tambah Penjahit</a>
                 <a href="data-penjahit.php" class="active">Data Penjahit</a>
-                <a href="nota.html" class="active">Nota Pesanan</a>
+                <a href="nota.php" class="active">Nota Pesanan</a>
+                <a href="tampilnota.php" class="active">Daftar Nota</a>
             </div>
             <!-- Other sidebar items -->
         </div>
@@ -72,13 +74,10 @@
                             <th>Nama Pelanggan</th>
                             <th>Alamat Pelanggan</th>
                             <th>Nomer Telepon</th>
-                            <th>Desain</th>
-                            <th>Bahan</th>
-                            <th>Ukuran</th>
-                            <th>Jumlah</th>
                             <th>Status</th>
                             <th>Action</th>
                             <th>Edit</th>
+                            <th>Pesanan</th>
 
                             <!-- Add this column for the update button -->
                         </tr>
@@ -89,13 +88,11 @@
                             echo "<td>" . $row["customer_name"] . "</td>";
                             echo "<td>" . $row["customer_address"] . "</td>";
                             echo "<td>" . $row["nomer_telepon"] . "</td>";
-                            echo "<td>" . $row["desain"] . "</td>";
-                            echo "<td>" . $row["bahan"] . "</td>";
-                            echo "<td>" . $row["ukuran"] . "</td>";
-                            echo "<td>" . $row["jumlah"] . "</td>";
                             echo "<td>" . $row["status"] . "</td>";
                             echo "<td><a href='updatestatus.php?id=" . $row["id_pesan"] . "'>Selesai</a></td>";
                             echo "<td><a href='edit.php?id=" . $row["id_pesan"] . "'>Edit</a></td>";
+                            echo "<td><a href='view_order.php?id=" . $row["id_pesan"] . "'>Lihat Pesanan</a></td>";
+
                             echo "</tr>";
                         }
                         ?>
