@@ -52,6 +52,8 @@
                     <th>Bahan</th>
                     <th>Ukuran</th>
                     <th>Jumlah</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
                 </tr>
                 <?php
                 // Sambungan ke database
