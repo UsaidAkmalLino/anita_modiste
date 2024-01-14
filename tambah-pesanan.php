@@ -16,7 +16,7 @@ $mysqli = new mysqli("localhost", "root", "", "anita_modiste");
 if ($mysqli->connect_error) {
     die("Koneksi ke database gagal: " . $mysqli->connect_error);
 }
-
+$ukuran = nl2br($_POST['ukuran']);
 $sql = "INSERT INTO pesanan_jahitan (customer_name, customer_address, nomer_telepon, desain, bahan, ukuran, jumlah) VALUES ('$customer_name', '$customer_address', '$nomer_telepon', '$desain', '$bahan', '$ukuran', '$jumlah')";
 
 if ($mysqli->query($sql) === TRUE) {

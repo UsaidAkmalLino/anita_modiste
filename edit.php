@@ -26,6 +26,7 @@
                 <a href="data-penjahit.php" class="active">Data Penjahit</a>
                 <a href="nota.php" class="active">Nota Pesanan</a>
                 <a href="tampilnota.php" class="active">Daftar Nota</a>
+                <a href="logout.php" class="active">Keluar</a>
             </div>
             <!-- Other sidebar items -->
         </div>

@@ -48,7 +48,7 @@ $koneksi->close();
 
 <head>
     <title>Input Nota</title>
-	<link rel="stylesheet" href="css/nota1.css">
+    <link rel="stylesheet" href="css/nota1.css">
     <link rel="stylesheet" href="css/tambah-pesanan.css">
     <script>
         function calculateTotal() {
@@ -61,7 +61,7 @@ $koneksi->close();
 </head>
 
 <body>
-<div class="dashboard">
+    <div class="dashboard">
         <div class="sidebar">
             <!-- Sidebar content -->
             <h2>ADMIN</h2>
@@ -73,35 +73,36 @@ $koneksi->close();
                 <a href="data-penjahit.php" class="active">Data Penjahit</a>
                 <a href="nota.php" class="active">Nota Pesanan</a>
                 <a href="tampilnota.php" class="active">Daftar Nota</a>
+                <a href="logout.php" class="active">Keluar</a>
             </div>
             <!-- Other sidebar items -->
         </div>
         <div class="main-content">
-			<div class="container">
-				<h2>Input Nota</h2>
-				<form method="post" action="nota.php">
-					<label for="no_nota">Nomor Nota:</label>
-					<input type="text" name="no_nota" required><br>
+            <div class="container">
+                <h2>Input Nota</h2>
+                <form method="post" action="nota.php">
+                    <label for="no_nota">Nomor Nota:</label>
+                    <input type="text" name="no_nota" required><br>
 
-					<label for="nama_customer">Nama Customer:</label>
-					<input type="text" name="nama_customer" required><br>
+                    <label for="nama_customer">Nama Customer:</label>
+                    <input type="text" name="nama_customer" required><br>
 
-					<label for="biaya_bahan">Biaya Bahan:</label>
-					<input type="number" id="biaya_bahan" name="biaya_bahan" required oninput="calculateTotal()"><br>
+                    <label for="biaya_bahan">Biaya Bahan:</label>
+                    <input type="number" id="biaya_bahan" name="biaya_bahan" required oninput="calculateTotal()"><br>
 
-					<label for="biaya_jasa">Biaya Jasa:</label>
-					<input type="number" id="biaya_jasa" name="biaya_jasa" required oninput="calculateTotal()"><br>
+                    <label for="biaya_jasa">Biaya Jasa:</label>
+                    <input type="number" id="biaya_jasa" name="biaya_jasa" required oninput="calculateTotal()"><br>
 
-					<label for="total">Total:</label>
-					<input type="number" id="total" name="total" required readonly><br>
+                    <label for="total">Total:</label>
+                    <input type="number" id="total" name="total" required readonly><br>
 
-					<label for="tanggal">Tanggal:</label>
-					<input type="date" name="tanggal" required><br>
-					<input type="submit" value="Submit">
-				</form>
-			</div>
-		</div>
-<div>
+                    <label for="tanggal">Tanggal:</label>
+                    <input type="date" name="tanggal" required><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <div>
 </body>
 
 </html>
