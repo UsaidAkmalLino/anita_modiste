@@ -39,7 +39,7 @@
             <h2>Karyawan</h2>
             <hr width="200px">
             <div class="menu">
-                <a href="tambah-pesanan.html" class="active">Daftar Pesanan Jahitan</a>
+                <a href="karyawan.php" class="active">Daftar Pesanan Jahitan</a>
                 <!-- Other sidebar items -->
             </div>
         </div>
